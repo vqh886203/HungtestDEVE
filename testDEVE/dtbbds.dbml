@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLBDSLVTN" Class="dtbbdsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=hung\sqlexpress;Initial Catalog=QLBDSLVTN;Integrated Security=True" SettingsObjectName="testDEVE.Properties.Settings" SettingsPropertyName="QLBDSLVTNConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.NhanVien" Member="NhanViens">
+    <Type Name="NhanVien">
+      <Column Name="nvid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="taikhoan" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="matkhau" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tennv" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="sdt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diachi" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ngaysinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="gioitinh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="doanhthu" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="quyen" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="hinh" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="NhanVien_KhachHang" Member="KhachHangs" ThisKey="nvid" OtherKey="nvid" Type="KhachHang" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhachHang" Member="KhachHangs">
+    <Type Name="KhachHang">
+      <Column Name="khid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="hoten" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="diachi" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="diachitt" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="cmnd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ngaysinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="sdt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="gioitinh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="loaikh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="mota" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="nvid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="NhanVien_KhachHang" Member="NhanVien" ThisKey="nvid" OtherKey="nvid" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

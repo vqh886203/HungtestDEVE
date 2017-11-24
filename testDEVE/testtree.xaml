@@ -1,0 +1,46 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:testDEVE"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" x:Class="testDEVE.testtree"
+        mc:Ignorable="d"
+        Title="testtree" Height="323.762" Width="858.045">
+    <Window.Resources>
+
+        <dx:LinqSimpleDataSource x:Key="LinqSimpleDataSource" ContextType="{x:Type local:dtbbdsDataContext}" Path="NhanViens">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+        </dx:LinqSimpleDataSource>
+        <dx:LinqSimpleDataSource x:Key="LinqSimpleDataSource1" ContextType="{x:Type local:dtbbdsDataContext}" Path="KhachHangs">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+        </dx:LinqSimpleDataSource>
+        <dx:LinqSimpleDataSource x:Key="LinqSimpleDataSource2" ContextType="{x:Type local:dtbbdsDataContext}" Path="NhanViens">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+        </dx:LinqSimpleDataSource>
+        <dx:LinqSimpleDataSource x:Key="LinqSimpleDataSource3" ContextType="{x:Type local:dtbbdsDataContext}" Path="KhachHangs">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+        </dx:LinqSimpleDataSource>
+    </Window.Resources>
+    <Grid>
+
+        <dxg:GridControl x:Name="gridControl" ItemsSource="{Binding Data, Source={StaticResource LinqSimpleDataSource3}}"
+                                            
+                                             SelectionMode="Row" AutoGenerateColumns="AddNew" >
+            <dxg:GridControl.View>
+
+                <dxg:TreeListView KeyFieldName="khid" ParentFieldName="nvid" AutoWidth="True" AllowPerPixelScrolling="True" AutoExpandAllNodes="True"  ColumnFilterPopupMode="Excel"
+                                  ShowFixedTotalSummary="True" ShowNodeImages="True" AllowScrollAnimation="True" PrintNodeImages="True"/>
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+
+    </Grid>
+</Window>
