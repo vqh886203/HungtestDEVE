@@ -8,26 +8,20 @@ namespace testDEVE
     /// </summary>
     public partial class MainWindow : Window
     {
-        private UCNVList a = new UCNVList();
-        private UCNV b = new UCNV();
-        int tt = 0;
+        UCNVList a = new UCNVList();
+        UCNV b = new UCNV();
+        UCBatDongSan c;
         public MainWindow()
         {
             InitializeComponent();
-            
-            usnv.Content = b;
-            biNV.IsEnabled = false;
-            nbiList.IsEnabled = true;
-
+            usnv.Content = null;
         }
 
       
 
         private void biNV_ItemClick(object sender, DevExpress.Xpf.Bars.ItemClickEventArgs e)
         {
-           
             usnv.Content = b;
-            
             biNV.IsEnabled = false;
             nbiList.IsEnabled = true;
             biKH.IsEnabled = true;
@@ -53,14 +47,16 @@ namespace testDEVE
 
         private void nbiList_Click(object sender, System.EventArgs e)
         {
-            tt = 1;
-            UCNVList ucList = new UCNVList();
-            usnv.Content = ucList;
+            a = new UCNVList();
+            usnv.Content = a;
             nbiList.IsEnabled = false;
             nbiDetail.IsEnabled = true;
-            
         }
 
-        
+        private void biBDS_ItemClick(object sender, DevExpress.Xpf.Bars.ItemClickEventArgs e)
+        {
+            c = new UCBatDongSan();
+            usnv.Content = c;
+        }
     }
 }

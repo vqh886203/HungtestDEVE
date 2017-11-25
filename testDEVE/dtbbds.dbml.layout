@@ -2,23 +2,49 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dtbbds">
   <DataContextMoniker Name="/dtbbdsDataContext" />
   <nestedChildShapes>
-    <classShape Id="ffaef4c2-6697-4d66-ab88-8b3cf95aaf35" absoluteBounds="1.125, 1.125, 2, 3.1170068359375">
+    <classShape Id="73c41a6e-722d-447e-a49e-e102078b74cf" absoluteBounds="6.25, 2.25, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/dtbbdsDataContext/BatDongSan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ba5322a4-5fbc-42f7-a3ab-cbb8270f17e0" absoluteBounds="6.265, 2.71, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="57c483b5-df2d-423e-8fc3-54eaa7adf511" absoluteBounds="0.75, 2.75, 2, 3.1170068359374996">
       <DataClassMoniker Name="/dtbbdsDataContext/NhanVien" />
       <nestedChildShapes>
-        <elementListCompartment Id="29309ebc-4ed1-4a3a-bdc0-fbfc0c31c69f" absoluteBounds="1.1400000000000001, 1.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f78e5302-1b99-42df-a71f-67d22e8040da" absoluteBounds="0.765, 3.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4e365c2d-a7d3-4d04-ac29-0e7c7328e5f8" absoluteBounds="3.875, 1.5, 2, 3.1170068359375">
+    <classShape Id="0338d0cb-9416-4f84-9f6a-90700f147c26" absoluteBounds="3.5, 2.75, 2, 3.1170068359375">
       <DataClassMoniker Name="/dtbbdsDataContext/KhachHang" />
       <nestedChildShapes>
-        <elementListCompartment Id="6d03d952-2e29-4aa2-8023-af95670dd0f5" absoluteBounds="3.89, 1.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ece85289-b834-4511-acb8-f6ca4cf0775c" absoluteBounds="3.515, 3.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.125 : 2.87100341796875); (3.875 : 2.87100341796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <classShape Id="117b1b0d-c0af-42c1-9f33-30f408505088" absoluteBounds="3.5, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/dtbbdsDataContext/LoaiBD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5c782833-251e-41cf-ae71-9f67c6108317" absoluteBounds="3.515, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 4.30850341796875); (6.25 : 4.30850341796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dtbbdsDataContext/KhachHang/KhachHang_BatDongSan" />
+      <nodes>
+        <classShapeMoniker Id="0338d0cb-9416-4f84-9f6a-90700f147c26" />
+        <classShapeMoniker Id="73c41a6e-722d-447e-a49e-e102078b74cf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.30850341796875); (3.5 : 4.30850341796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/dtbbdsDataContext/NhanVien/NhanVien_KhachHang" />
       <nodes>
-        <classShapeMoniker Id="ffaef4c2-6697-4d66-ab88-8b3cf95aaf35" />
-        <classShapeMoniker Id="4e365c2d-a7d3-4d04-ac29-0e7c7328e5f8" />
+        <classShapeMoniker Id="57c483b5-df2d-423e-8fc3-54eaa7adf511" />
+        <classShapeMoniker Id="0338d0cb-9416-4f84-9f6a-90700f147c26" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.34699625651042); (7.25 : 1.34699625651042); (7.25 : 2.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dtbbdsDataContext/LoaiBD/LoaiBD_BatDongSan" />
+      <nodes>
+        <classShapeMoniker Id="117b1b0d-c0af-42c1-9f33-30f408505088" />
+        <classShapeMoniker Id="73c41a6e-722d-447e-a49e-e102078b74cf" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
