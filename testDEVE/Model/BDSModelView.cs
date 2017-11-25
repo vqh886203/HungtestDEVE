@@ -17,16 +17,17 @@ namespace testDEVE.Model
         }
         public IEnumerable<object> getDSBDSView()
         {
-            
+
             return dc.BatDongSans.Select(x => new BDSView
             {
                 bdsid = x.bdsid,
-                dongia = String.Format("{0:.##}"+" triệu", x.dongia.Value),
+                dongia = String.Format("{0:.##}" + " triệu", x.dongia.Value),
                 diachi = x.sonha + ", " + x.tenduong + "\n" + "P. " + x.phuong
                 + ", Q. " + x.quan + ", TP. " + x.thanhpho,
                 dientich = String.Format("{0:.##}" + " m2", x.dientich.Value),
                 chieurong = String.Format("{0:.##}" + " m", x.chieurong.Value),
                 chieudai = String.Format("{0:.##}" + " m", x.chieudai.Value),
+                tongtien = String.Format("{0:.##}" + " tỷ", (x.dientich.Value*x.dongia.Value)/1000),
                 hinhanh = x.hinhanh.ToString() == null ? null : x.hinhanh.ToArray(),
                 tenkh = x.KhachHang.hoten,
                 tenloai=x.LoaiBD.tenloai
@@ -50,6 +51,7 @@ namespace testDEVE.Model
         public string dongia { get ; set; }
         public string tenkh { get; set; }
         public string tenloai { get; set; }
+        public string tongtien { get; set; }
     }
 }
 

@@ -34,6 +34,7 @@
                 <dxg:GridColumn FixedWidth="True" FieldName="chieudai" Header="Chiều Dài" />
                 <dxg:GridColumn FieldName="dongia" Header="Đơn Giá" FixedWidth="True" />
                 <dxg:GridColumn FixedWidth="True" FieldName="tenkh" Header="Khách Hàng" />
+                <dxg:GridColumn FixedWidth="True" FieldName="tongtien" Header="Tổng Tiền"  />
             </dxg:GridControl>
 
 

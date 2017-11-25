@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using testDEVE;
+using testDEVE.Model;
 
 namespace testDEVE
 {
@@ -30,8 +31,10 @@ namespace testDEVE
         public SuaBDS()
         {
             InitializeComponent();
-            
-            
+            cboTt.Items.Add("Chưa Bán");
+            cboTt.Items.Add("Mở Bán");
+            cboTt.Items.Add("Hết Hạn");
+            cboTt.Items.Add("Đã Bán");
         }
         public void setBDS(int ms)
         {
@@ -49,6 +52,8 @@ namespace testDEVE
                     txtTP.Text = a.thanhpho;
                     txtDai.Text = a.chieudai.ToString();
                     txtRong.Text = a.chieurong.ToString();
+                    txtDongia.Text = a.dongia.ToString();
+                    txtMota.Text = a.mota;
                     if (a.hinhanh.Length<=5) { img.Source = null; }
                     else
                     {
@@ -69,6 +74,9 @@ namespace testDEVE
                         cboLoai.Items.Add(loai.tenloai);
                         cboLoai.Text = a.LoaiBD.tenloai;
                     }
+                    cboTt.Text = cboTt.Items[a.tinhtrang.Value].ToString();
+                   
+                    
                 }
             }
         }
@@ -83,10 +91,25 @@ namespace testDEVE
                     bds.chieudai = double.Parse(txtDai.Text);
                     bds.chieurong = double.Parse(txtRong.Text);
                     bds.dientich = double.Parse(txtDai.Text) * double.Parse(txtRong.Text);
-                    bds.hinhanh = ConvertToBytes(img.Source as BitmapImage);
+                    bds.dongia = double.Parse(txtDongia.Text);
+                    bds.hoahong = double.Parse(txtHh.Text);
+                    //bds.khid = cboKh.SelectedIndex+1;
+                    bds.tinhtrang = cboTt.SelectedIndex;
+                    //bds.loaiid = cboKh.SelectedIndex + 1;
+                    bds.masoqsdd = txtMsqsdd.Text;
+                    bds.sonha = txtSonha.Text;
+                    bds.tenduong = txtDuong.Text;
+                    bds.phuong = txtPhuong.Text;
+                    bds.quan = txtQuan.Text;
+                    bds.thanhpho = txtTP.Text;
+                    bds.mota = txtMota.Text;
+                    bds.hinhanh = img.Source==null?null: ConvertToBytes(img.Source as BitmapImage);
                     dc.SubmitChanges();
+                    MessageBox.Show("Sửa BĐS thành công !!!");
                 }
+
             }
+            this.Close();
         }
 
         private void btnXoa_Click(object sender, RoutedEventArgs e)
@@ -105,5 +128,7 @@ namespace testDEVE
             }
             return data;
         }
+
+        
     }
 }
