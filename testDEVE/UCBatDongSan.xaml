@@ -25,7 +25,7 @@
                 </dxg:GridControl.View>
                 <dxg:GridColumn FieldName="hinhanh"  Header="Hình Ảnh" FixedWidth="False" HorizontalHeaderContentAlignment="Center">
                     <dxg:GridColumn.EditSettings>
-                        <dxe:ImageEditSettings MaxWidth="150" Stretch="Fill" ShowMenu="False"/>
+                        <dxe:ImageEditSettings MaxWidth="500" Stretch="Fill" ShowMenu="False"/>
                     </dxg:GridColumn.EditSettings>
                 </dxg:GridColumn>
                 <dxg:GridColumn FixedWidth="True" FieldName="diachi" Header="Địa Chỉ" />

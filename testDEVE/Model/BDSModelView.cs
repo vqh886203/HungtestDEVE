@@ -22,7 +22,8 @@ namespace testDEVE.Model
             {
                 bdsid = x.bdsid,
                 dongia = String.Format("{0:.##}" + " triệu", x.dongia.Value),
-                diachi = x.sonha + ", " + x.tenduong + "\n" + "P. " + x.phuong
+                diachi = x.sonha + ", " + x.tenduong //+ "\n" 
+                + "P. " + x.phuong
                 + ", Q. " + x.quan + ", TP. " + x.thanhpho,
                 dientich = String.Format("{0:.##}" + " m2", x.dientich.Value),
                 chieurong = String.Format("{0:.##}" + " m", x.chieurong.Value),
