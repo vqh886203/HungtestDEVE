@@ -17,14 +17,15 @@
         </Grid.DataContext>
         <DockPanel>
             <dxb:StatusBarControl Caption="StatusBar" DockPanel.Dock="Bottom" ShowSizeGrip="True"/>
-            <dxlc:LayoutControl Orientation="Vertical" VerticalAlignment="Top">
+            <dxlc:LayoutControl Orientation="Vertical" VerticalAlignment="Top" Background="{x:Null}" MovingItemPlaceHolderBrush="{x:Null}">
                 <Label  Content="Danh Sách Nhân Viên" FontWeight="Bold" FontSize="14" VerticalAlignment="Top"/>
                 <Grid>
-                    <dxlc:LayoutControl VerticalAlignment="Top">
-                        <dxlc:LayoutGroup Width="800">
+                    <dxlc:LayoutControl VerticalAlignment="Top" Background="{x:Null}" MovingItemPlaceHolderBrush="{x:Null}">
+                        <dxlc:LayoutGroup Width="800" Background="{x:Null}">
                             <dxg:GridControl x:Name="gridControl" ItemsSource="{Binding DSNV}"
                                              SelectionChanged="gridControl_SelectionChanged"
-                                             SelectionMode="Row" Loaded="gridControl_Loaded" >
+                                             SelectionMode="Row" Loaded="gridControl_Loaded" 
+                                             Keyboard.KeyDown="gridControl_KeyDown">
                                 <dxg:GridControl.View>
                                     <dxg:TableView AllowPerPixelScrolling="True" 
                                                    ShowTotalSummary="True" AutoWidth="True"
@@ -40,23 +41,23 @@
                                 <dxg:GridColumn FieldName="sdt" IsSmart="True" Header="Số Điện Thoại"/>
                             </dxg:GridControl>
                         </dxlc:LayoutGroup>
-                        <dxlc:LayoutGroup Orientation="Vertical" VerticalAlignment="Top"  >
+                        <dxlc:LayoutGroup Orientation="Vertical" VerticalAlignment="Top" Background="{x:Null}"  >
                             <dxe:ImageEdit Width="250"  Height="250" Name="image" ShowMenu="False" ShowLoadDialogOnClickMode="Never" Stretch="Fill"  />
-                            <dxlc:LayoutControl Orientation="Vertical">
-                                <dxlc:LayoutGroup>
-                                    <dxlc:LayoutGroup x:Name="layoutGroup" Orientation="Vertical" VerticalAlignment="Top" Width="300">
-                                        <dxlc:LayoutItem  Label="Tên Nhân Viên:  " HorizontalAlignment="Center" LabelHorizontalAlignment="Center" >
-                                            <Label x:Name="lbtennv" Content="Vương Quang Hưng"/>
+                            <dxlc:LayoutControl Orientation="Vertical" Background="{x:Null}" MovingItemPlaceHolderBrush="{x:Null}">
+                                <dxlc:LayoutGroup Background="{x:Null}">
+                                    <dxlc:LayoutGroup Orientation="Vertical" VerticalAlignment="Top" Width="300"  Margin="17,0,0,0">
+                                        <dxlc:LayoutItem Name="loten" Label="Tên Nhân Viên:  " HorizontalAlignment="Center" LabelHorizontalAlignment="Center" FontWeight="Bold" Background="{x:Null}" >
+                                            <Label x:Name="lbtennv" Content="Vương Quang Hưng" FontWeight="Normal"/>
                                         </dxlc:LayoutItem>
-                                        <dxlc:LayoutItem Label="Ngày Sinh:  " HorizontalAlignment="Center">
-                                            <Label x:Name="lbns" Content="19/09/1994"/>
+                                        <dxlc:LayoutItem Name="lons" Label="Ngày Sinh:  " HorizontalAlignment="Center" FontWeight="Bold" Background="{x:Null}">
+                                            <Label x:Name="lbns" Content="19/09/1994" FontWeight="Normal"/>
                                         </dxlc:LayoutItem>
                                         
-                                        <dxlc:LayoutItem Label="Địa chỉ:  " HorizontalAlignment="Center" LabelHorizontalAlignment="Center" >
-                                            <Label x:Name="lbtdiachi" Content="An Giang"/>
+                                        <dxlc:LayoutItem Label="Địa chỉ:  " HorizontalAlignment="Center" LabelHorizontalAlignment="Center" FontWeight="Bold" >
+                                            <Label x:Name="lbtdiachi" Content="An Giang" FontWeight="Normal"/>
                                         </dxlc:LayoutItem>
-                                        <dxlc:LayoutItem Label="Doanh Thu:  " HorizontalAlignment="Center">
-                                            <Label x:Name="lbdt" Content="1000000000"/>
+                                        <dxlc:LayoutItem Label="Doanh Thu:  " HorizontalAlignment="Center" FontWeight="Bold" >
+                                            <Label x:Name="lbdt" Content="1000000000" FontWeight="Normal"/>
                                         </dxlc:LayoutItem>
                                     </dxlc:LayoutGroup>
                                     <dxlc:LayoutItem HorizontalAlignment="Right" Height="{Binding ActualHeight, ElementName=layoutGroup}" Label=" " LabelPosition="Top"/>

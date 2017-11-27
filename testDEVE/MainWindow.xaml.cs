@@ -61,6 +61,15 @@ namespace testDEVE
             
         }
 
-        
+
+        private void biKH_ItemClick_2(object sender, DevExpress.Xpf.Bars.ItemClickEventArgs e)
+        {
+            UCKH uskh = new UCKH();
+            usnv.Content = uskh;
+            biNV.IsEnabled = true;
+            biKH.IsEnabled = false;
+            nbiList.IsEnabled = false;
+            nbiDetail.IsEnabled = false;
+        }
     }
 }

@@ -24,10 +24,12 @@ namespace testDEVE
     public partial class UCNV : UserControl
     {
         dtbbdsDataContext dc = new dtbbdsDataContext();
+        public int intidnv = 0;
         public UCNV()
         {
             InitializeComponent();
             gridControl.ItemsSource = new NhanVienModelView().DSNV;
+            
         }
 
         private void TableView_RowUpdated(object sender, DevExpress.Xpf.Grid.RowEventArgs e)
@@ -82,6 +84,20 @@ namespace testDEVE
                     dc.NhanViens.DeleteOnSubmit(i);
                     dc.SubmitChanges();
                 }
+            }
+        }
+
+        private void gridControl_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                NhanVienView a = gridControl.SelectedItem as NhanVienView;
+                NVlistKH.stringnvid = a.nvid.ToString();
+                NVlistKH frm = new NVlistKH();
+                
+                frm.Show();
+               
+
             }
         }
     }

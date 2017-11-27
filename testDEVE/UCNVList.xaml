@@ -36,15 +36,7 @@
                                 ShowEditFormOnDoubleClick="False" ShowEditFormOnEnterKey="True"
                                  />
                 </dxg:GridControl.View>
-                <dxg:GridColumn AllowResizing="False"  AllowMoving="False" 
-                                EditFormVisible="True" FieldName="hinh" Header="Hình Đại Diện"
-                                ShowInColumnChooser="True" Visible="True">
-                    <dxg:GridColumn.EditSettings>
-                        <dxe:PopupImageEditSettings MaxWidth="100" Stretch="Fill" 
-                                                    ShowLoadDialogOnClickMode="Always" ShowMenu="True" 
-                                                    ShowMenuMode="Always"/>
-                    </dxg:GridColumn.EditSettings>
-                </dxg:GridColumn>
+              
                 <dxg:GridColumn  FieldName="nvid" EditFormStartNewRow="True" Header="ID"   HorizontalHeaderContentAlignment="Center" AllowEditing="False" ReadOnly="True" EditFormVisible="False" />
                 <dxg:GridColumn  FieldName="tennv" Width="auto" EditFormStartNewRow="True" Header="Họ Tên"  HorizontalHeaderContentAlignment="Center" />
                 <dxg:GridColumn  FieldName="diachi" Header="Địa Chỉ" EditFormVisibleIndex="2" HorizontalHeaderContentAlignment="Center"/>
@@ -59,11 +51,20 @@
                 <dxg:GridColumn  FieldName="taikhoan" Header="Tài Khoản"  HorizontalHeaderContentAlignment="Center" ReadOnly="True" AllowEditing="False" EditFormVisible="False"/>
                 <dxg:GridColumn  FieldName="doanhthu" Header="Doanh Thu"  HorizontalHeaderContentAlignment="Center" ReadOnly="True" AllowEditing="False" EditFormVisible="False"/>
                 <dxg:GridColumn  FieldName="quyen" Header="Quyền"   HorizontalHeaderContentAlignment="Center" EditFormVisibleIndex="2" >
+                    
                     <dxg:GridColumn.EditSettings>
                         <dxe:CheckEditSettings />
                     </dxg:GridColumn.EditSettings>
                 </dxg:GridColumn>
-
+                <dxg:GridColumn AllowResizing="False"  AllowMoving="False" 
+                                EditFormVisible="True" FieldName="hinh" Header="Hình Đại Diện"
+                                ShowInColumnChooser="True" Visible="True">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:PopupImageEditSettings MaxWidth="100" Stretch="Fill" 
+                                                    ShowLoadDialogOnClickMode="Always" ShowMenu="True" 
+                                                    ShowMenuMode="Always"/>
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
             </dxg:GridControl>
 
         </Grid>
