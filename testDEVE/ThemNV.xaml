@@ -37,9 +37,9 @@
                     <dxe:ImageEdit Name="img"/>
                 </dxlc:LayoutItem>
             </dxlc:LayoutGroup>
-            <dxlc:LayoutGroup Header="Liên Hệ: " Orientation="Vertical" UseLayoutRounding="True" View="GroupBox">
-                <dxlc:LayoutItem Label="Mobile: ">
-                    <dxe:TextEdit Name="txtSDT" />
+            <dxlc:LayoutGroup Header="Liên Hệ: " Orientation="Vertical" UseLayoutRounding="True" View="GroupBox" >
+                <dxlc:LayoutItem Label="Mobile: " >
+                    <dxe:TextEdit Name="txtSDT" MaskType="Simple" Mask="00000000000" />
                 </dxlc:LayoutItem>
                 <dxlc:LayoutItem Label="E-mail: ">
                     <dxe:TextEdit Name="txtEmail" EditValue="aaaaaaaa@gmail.com" EditValueChanged="txtEmail_EditValueChanged"/>

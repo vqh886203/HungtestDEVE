@@ -80,15 +80,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dtbbds.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Model\BDSModelView.cs" />
     <Compile Include="Model\NhanVienModelView.cs" />
-    <Compile Include="NVlistKH.xaml.cs">
-      <DependentUpon>NVlistKH.xaml</DependentUpon>
-    </Compile>
     <Compile Include="testtree.xaml.cs">
       <DependentUpon>testtree.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UCKH.xaml.cs">
-      <DependentUpon>UCKH.xaml</DependentUpon>
     </Compile>
     <Compile Include="UCNV.xaml.cs">
       <DependentUpon>UCNV.xaml</DependentUpon>
@@ -111,13 +106,13 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="NVlistKH.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="testtree.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCBatDongSan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UCKH.xaml">
       <SubType>Designer</SubType>

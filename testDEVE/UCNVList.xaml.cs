@@ -1,4 +1,5 @@
 ﻿using DevExpress.Xpf.Grid;
+using DevExpress.XtraEditors.Controls;
 using System.IO;
 using System.Linq;
 using System.Windows;
@@ -41,7 +42,7 @@ namespace testDEVE
                     if (row.gioitinh == "Nam")
                         i.gioitinh = true;
                     else i.gioitinh = false;
-                    i.hinh = ConvertToBytes(ToImage(row.hinh.ToArray()));
+                    i.hinh = ByteImageConverter.ToByteArray(row.hinh);
                     i.diachi = row.diachi;
                     i.doanhthu = row.doanhthu;
                     i.ngaysinh = row.ngaysinh;
@@ -55,36 +56,8 @@ namespace testDEVE
             }
             grid.ItemsSource = new NhanVienModelView().DSNVList;
         }
-        public static byte[] ConvertToBytes(BitmapImage bitmapImage)
-        {
-            byte[] data;
-            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
-            encoder.Frames.Add(BitmapFrame.Create(bitmapImage));
-            using (MemoryStream ms = new MemoryStream())
-            {
-                encoder.Save(ms);
-                data = ms.ToArray();
-            }
-            return data;
-        }
-        public BitmapImage ToImage(byte[] array)
-        {
-            using (var ms = new MemoryStream(array))
-            {
-                var image = new BitmapImage();
-                image.BeginInit();
-                image.CacheOption = BitmapCacheOption.OnLoad;
-                image.StreamSource = ms;
-                image.EndInit();
-                return image;
-            }
-        }
-        public void xoaNV()
-        {
-
-
-
-        }
+      
+        
 
         private void grid_KeyDown(object sender, KeyEventArgs e)
         {
@@ -163,11 +136,6 @@ namespace testDEVE
             }
         }
 
-        //private void btnThem_Click(object sender, RoutedEventArgs e)
-        //{
-
-        //    Window1 a = new Window1();
-        //    a.Show();
-        //}
+        
     }
 }
